@@ -1,0 +1,9 @@
+# requirements.txt  –  Python dependencies for Josiah Guenther Magic Website
+#
+# Install everything with:
+#   pip install -r requirements.txt
+#
+# Python 3.9+ recommended.
+
+flask>=3.0,<4.0          # Web framework — handles routing and template rendering
+python-dotenv>=1.0,<2.0  # Loads .env file into environment variables

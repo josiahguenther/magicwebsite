@@ -1,0 +1,29 @@
+For the text on the website:
+Go to the templates folder and in each of the html files you can scroll down and replace the white text in the document.
+The three html files of interest are the home.html, services.html, and contact.html
+
+For the images:
+The home and services page both have images. Just put the files jpg image files in the images folder in the static
+folder
+The top of the home page is: hero-home.jpg
+The pair of photos in the middle of the page are: home-photo-1.jpg and home-photo-2.jpg
+The large image at the top of the services page is: hero-services.jpg
+The pair of photos at the bottom of the services page are: services-photo-1.jpg and services-photo-2.jpg
+
+For the social media links:
+Go to the base.html file in the templates folder and scroll down to the footer area and change the links to your
+channels
+
+To make the contact form work:
+The information about your email and the necessary password is stored in the .env file. This is because this file is
+secure and so the information stays secret.
+You need to change the OWNER_EMAIL, SMTP_USER, and SMTP_PASSWORD.
+The OWNER_EMAIL and SMTP_USER are the same. This is just the email you want the message from the contact form to go to.
+The SMTP_PASSWORD is a special password generated with your good account. To get it follow these steps:
+    On your profile click manage my Google account
+    Click on "Security & sign-in"
+    Click 2-step verification and enable it
+    Scroll down to where it says "App Passwords"
+    Create a name for an app -- it can be whatever you want, it doesn't matter
+    Then copy the password that it gives you
+    Then put that password in the .env file across from the SMTP_PASSWORD

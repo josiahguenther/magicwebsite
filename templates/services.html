@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% set active_page = "services" %}
+
+{% block title %}Services – Josiah Guenther{% endblock %}
+
+{% block content %}
+
+<!-- ══ SERVICES HERO ══════════════════════════════════════ -->
+<section class="services-hero">
+  <!--
+    IMAGE: static/images/hero-services.jpg
+    Replace with a wide photo of Josiah at an event or performing close-up.
+    Recommended size: 1600×700px or larger.
+  -->
+  <img
+    class="services-hero-img"
+    src="{{ url_for('static', filename='images/hero-services.jpg') }}"
+    alt="Josiah Guenther performing at an event"
+  />
+  <div class="services-hero-content">
+    <h1>What Josiah Offers</h1>
+    <p>Tailored Magic for Every Occasion</p>
+  </div>
+</section>
+
+<!-- ══ SERVICES TEXT ══════════════════════════════════════ -->
+<section class="services-text-section">
+  <div class="container">
+    <div class="section-label"><span>What We Do</span></div>
+    <h2>Shows and Performances for Your Event</h2>
+
+    <p>
+      Josiah is a magical performer whose talents will benefit a wide variety of events.
+      Whether it be corporate events, weddings, private parties, galas, product launches, or intimate dinner parties,
+      Josiah is ready to entertain and amaze you and your guests.
+      He offers multiple kinds of performances (detailed below) depending on your event.
+    </p>
+    <p>
+    </p>
+
+
+    <!-- Service Type Cards -->
+    <div class="services-cards">
+      <div class="service-card">
+        <span class="sc-icon">🎩</span>
+        <h4>Full Show</h4>
+        <p>A full magic show that can be customized in length and scope to fit the needs of your event. Whether it’s a group of 20 or a crowd of 500, Josiah will be sure to amaze and astound with a full polished performance, featuring sleight of hand, comedy, and probably snacks.</p>
+      </div>
+      <div class="service-card">
+        <span class="sc-icon">💼</span>
+        <h4>Walkaround Magic</h4>
+        <p>Josiah will interact directly with the guests at your event, performing magic right under their noses, at tables or in small groups. Unlike
+      stage shows that require a seated audience and a fixed schedule, Josiah roams and mingles,
+      bringing the magic directly to people in small, intimate groups wherever they happen to
+      be standing. </p>
+      </div>
+      <div class="service-card">
+        <span class="sc-icon">✨</span>
+        <h4>Customized to Your Event</h4>
+        <p>Whatever your event is, adding Josiah’s magic is sure to make it better. If your needs don't fit into these categories, we’d be happy to talk and try to accommodate them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES PHOTO PAIR ════════════════════════════════ -->
+<section class="services-images">
+  <div class="container">
+    <div class="image-pair">
+      <!--
+        IMAGES: static/images/services-photo-1.jpg  &  services-photo-2.jpg
+        Replace with your own event photos.
+        Recommended size: 800×600px or larger, 4:3 ratio.
+      -->
+      <img
+        src="{{ url_for('static', filename='images/services-photo-1.jpg') }}"
+        alt="Josiah performing at a corporate event"
+      />
+      <img
+        src="{{ url_for('static', filename='images/services-photo-2.jpg') }}"
+        alt="Josiah entertaining at a wedding reception"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOOK CTA ═══════════════════════════════════════════ -->
+<section class="book-cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <p class="cta-tagline">Let's talk about your event.</p>
+      <a class="book-btn" href="{{ url_for('contact') }}">Book Josiah</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

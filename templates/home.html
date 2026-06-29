@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+{% set active_page = "home" %}
+
+{% block title %}Josiah Guenther {% endblock %}
+
+{% block content %}
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section class="hero">
+  <!--
+    IMAGE: static/images/hero-home.jpg
+    Replace with a full-width photo of Josiah performing or a dramatic stage shot.
+    Recommended size: 1600×900px or larger.
+  -->
+  <img
+    class="hero-img"
+    src="{{ url_for('static', filename='images/hero-home.jpg') }}"
+    alt="Josiah Guenther performing close-up magic"
+  />
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span>Magician</span></div>
+    <h1 class="hero-name">Josiah Guenther</h1>
+    <p class="hero-sub">Your Guide to Wonderland</p>
+    <a class="hero-cta" href="{{ url_for('contact') }}">Book Josiah</a>
+  </div>
+</section>
+
+<!-- ══ BIO ═══════════════════════════════════════════════ -->
+<section class="bio-section">
+  <div class="container">
+    <div class="section-label"><span>About</span></div>
+    <h2>A Refined Goofball</h2>
+    <p>
+        Josiah does the impossible. Sort of.
+    <p>
+        At only 15 years old, Josiah is already a talented performer, known for his confident performance, clean sleight of hand, and quirky humor. He is a member of the exclusive Junior Society of the Academy of the Magical Arts (better known as the legendary Magic Castle) where he continues to hone his skills under the mentorship of some of the greatest magicians of our era.
+In addition to being a talented magician, Josiah is also an award-winning public speaker, who placed 3rd in original oratory at speech and debate nationals, among many other awards. That means that his talkification is very gooderfied. He combines his skill for speaking well with his magical skills to make truly memorable performances.
+Whatever services you may require, Josiah is ready to entertain, captivate, and inspire his next audience and ultimately bring a bit more wonder to this wonderless world.
+
+    </p>
+    <p>
+
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ VIDEO ══════════════════════════════════════════════ -->
+<section class="video-section">
+  <div class="container">
+    <h2>Promo Video</h2>
+    <div class="video-wrapper">
+      <!--
+        YOUTUBE VIDEO:
+        Replace the src below with Josiah's YouTube embed URL.
+        How to get it: go to the YouTube video → Share → Embed
+        and copy only the URL from the src="…" attribute.
+        Example: https://www.youtube.com/embed/XXXXXXXXXXX
+      -->
+      <!-- on a YouTube video you can go to share and click the embed option and in the response it will give a link.
+      Just copy and paste that to switch it-->
+      <iframe
+        src="https://www.youtube.com/embed/EbpVITezJ74?si=SO2ntP9SCUkhqP7d"
+        title="Josiah Guenther – Magic Performance"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ MID TWO-COLUMN TEXT ════════════════════════════════ -->
+<section class="bio-section">
+  <div class="container">
+    <div class="section-label"><span>Built for Your Event</span></div>
+<!--    <h2></h2>-->
+<!--    <p>-->
+<!--        Josiah does the impossible. Sort of.-->
+<!--    <p>-->
+
+<!--    </p>-->
+    <p>
+          Every performance is tailored to fit the occasion. Whether it's a corporate banquet or birthday celebration, Josiah can craft the perfect expierence to make your event truly unforgettable. Whatever it may be, Josiah is excited to perform at your next event. The goal is always the same: make your event the best it can be.
+    </p>
+  </div>
+</section>
+
+<!--<section class="mid-text-section">-->
+<!--  <div class="container">-->
+<!--    <div class="mid-cols">-->
+<!--      <div>-->
+<!--        <h3>Built for Your Event</h3>-->
+<!--        <p>-->
+<!--          Every performance is tailored to fit the occasion. Whether it's a corporate banquet or birthday celebration, Josiah can craft the perfect expierence to make your event truly unforgettable. Whatever it may be, Josiah is excited to perform at your next event. The goal is always the same: make your event the best it can be.-->
+<!--        </p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!-- ══ PHOTO PAIR ════════════════════════════════════════ -->
+<section class="image-section">
+  <div class="container">
+    <div class="image-pair">
+      <!--
+        IMAGES: static/images/home-photo-1.jpg  &  home-photo-2.jpg
+        Replace these with your own performance photos.
+        Recommended size: 800×600px or larger, 4:3 ratio.
+      -->
+      <img
+        src="{{ url_for('static', filename='images/home-photo-1.jpg') }}"
+        alt="Josiah performing close-up card magic"
+      />
+      <img
+        src="{{ url_for('static', filename='images/home-photo-2.jpg') }}"
+        alt="Josiah entertaining guests at an event"
+      />
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ REVIEWS CAROUSEL ═══════════════════════════════════ -->
+<section class="reviews-section">
+  <div class="container">
+    <div class="section-label"><span>Testimonials</span></div>
+    <h2>What People Are Saying</h2>
+  </div>
+  <div class="container">
+    <div class="carousel-track-wrapper">
+      <div class="carousel-track" id="carouselTrack">
+        <!--you can just copy and past one of these review cards and add new text to create another one. If you want to adjust the star number just remove a <span>★</span>-->
+        <div class="review-card">
+          <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"Josiah's magic show was very entertaining. He performed with confidence and excellent showmanship. The audience was truly amazed at the different tricks. Lots of appeal for all ages.
+"</p>
+          <p class="review-author">— Susan Sanders</p>
+        </div>
+
+        <div class="review-card">
+          <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"Josiah was not just good at the magic tricks be performed, he was also entertaining to watch. He was funny in exactly the right moments, and his audience engagement was fantastic. It's easy to tell that this budding young magician is dedicated to his craft, and enjoys it. He's definitely a fun watch. "</p>
+          <p class="review-author">— Megan Smiley</p>
+        </div>
+
+        <div class="review-card">
+          <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"I came expecting to see a cool magic show, but instead I got a fantastic show that was full of comedy and wonder."</p>
+          <p class="review-author">— Patrick Ailes</p>
+        </div>
+
+        <div class="review-card">
+          <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"Josiah is a remarkable magician. These shows should coming with a warning though…
+
+“Warning: audience members may leave with chronic awe, bewilderment, or astonishment”
+
+This is not a show you’d want to miss!"</p>
+          <p class="review-author">— Connor Downing</p>
+        </div>
+
+        <div class="review-card">
+          <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"Really fun show! Josiah has great stage presence and really unique tricks up his sleeve that kept it interesting the whole show. I was surprised that an hour had gone by when it was over! 10/10 would go again 😀"</p>
+          <p class="review-author">— Lisa Carter</p>
+        </div>
+
+        <div class="review-card">
+          <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"It was one of the best shows I've seen and Josiah was super prepared. His oral presentation skills are really good and he had prepared really well. 11/10."</p>
+          <p class="review-author">— Benjamen Williams</p>
+        </div>
+
+      </div><!-- /carousel-track -->
+    </div><!-- /carousel-track-wrapper -->
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<!-- ══ BOOK CTA ═══════════════════════════════════════════ -->
+<section class="book-cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <p class="cta-tagline">Ready to create something unforgettable?</p>
+      <a class="book-btn" href="{{ url_for('contact') }}">Book Josiah</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<!-- Carousel is initialised in main.js on DOMContentLoaded -->
+{% endblock %}

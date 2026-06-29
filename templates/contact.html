@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% set active_page = "contact" %}
+
+{% block title %}Contact – Josiah Guenther{% endblock %}
+
+{% block content %}
+
+<!-- ══ CONTACT HERO ═══════════════════════════════════════ -->
+<section class="contact-hero">
+  <div class="section-label" style="justify-content:center; margin-bottom:20px;">
+    <span>Get in Touch</span>
+  </div>
+  <h1>Book Josiah</h1>
+  <p>Fill out the form below and Josiah will be in touch within 24 hours to discuss your event.</p>
+</section>
+
+<!-- ══ CONTACT FORM ═══════════════════════════════════════ -->
+<div class="contact-form-wrap">
+  <!--
+    The form submits via JavaScript (fetch) to the Flask /send-email route.
+    No page reload — instant feedback to the visitor.
+  -->
+  <form id="contactForm" novalidate>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder=""
+          autocomplete="given-name"
+        />
+        <span class="error-msg" id="err-firstName">Please enter your first name.</span>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder=""
+          autocomplete="family-name"
+        />
+        <span class="error-msg" id="err-lastName">Please enter your last name.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="someone@example.com"
+        autocomplete="email"
+      />
+      <span class="error-msg" id="err-email">Please enter a valid email address.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="(000) 000-0000"
+        autocomplete="tel"
+      />
+      <span class="error-msg" id="err-phone">Please enter your phone number.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Tell Josiah About Your Event</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Event type, date, location, number of guests, and anything else that would help…"
+      ></textarea>
+      <span class="error-msg" id="err-message">Please tell Josiah about your event.</span>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry</button>
+
+    <!-- Shown after a successful send -->
+    <div class="success-banner" id="successBanner">
+      <p>&#10022; &nbsp;Your message has been sent. Josiah will be in touch soon.&nbsp; &#10022;</p>
+    </div>
+
+    <!-- Shown if the server returns an error -->
+    <div class="server-error-banner" id="serverErrorBanner">
+      <p id="serverErrorMsg">Something went wrong. Please try again.</p>
+    </div>
+
+  </form>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<!-- Contact form validation + AJAX submission is in main.js -->
+{% endblock %}
