@@ -14,7 +14,8 @@ load_dotenv()
 # ── Create the Flask app ──────────────────────────────────
 app = Flask(__name__)
 
-
+# This is so the backend and frontend of the website can communicate
+CORS(app)
 
 # Secret key used by Flask for session security (not exposed to front-end)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "change-this-in-production")
