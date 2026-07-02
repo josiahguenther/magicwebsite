@@ -8,3 +8,4 @@
 flask>=3.0,<4.0          # Web framework — handles routing and template rendering
 python-dotenv>=1.0,<2.0  # Loads .env file into environment variables
 gunicorn>=23.0,<24.0
+resend
