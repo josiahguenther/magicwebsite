@@ -251,10 +251,8 @@ Sent via josiahguenthermagic.com
     
     I do my best to respond within 1–2 business days.
     
-    In the meantime, feel free to explore my website:
-    https://josiahguenthermagic.com
     
-    Have a wonderful day!
+    Have a magical day!
     
     Josiah Guenther
     """
@@ -300,7 +298,7 @@ Sent via josiahguenthermagic.com
     
     <p>
     <strong>Josiah Guenther</strong><br>
-    Your Guide to Wonderland
+    Your (Future) Guide to Wonderland
     </p>
     
     </div>
