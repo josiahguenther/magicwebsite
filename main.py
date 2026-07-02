@@ -215,4 +215,5 @@ This message was sent via the contact form at josiah-guenther.com
 if __name__ == "__main__":
     # debug=True gives you live reload while developing.
     # Set debug=False (or remove) before deploying to production.
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
