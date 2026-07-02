@@ -3,8 +3,7 @@ import smtplib
 import ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask import Flask
-from flask_cors import CORS
+
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 
@@ -13,9 +12,6 @@ load_dotenv()
 
 # ── Create the Flask app ──────────────────────────────────
 app = Flask(__name__)
-
-# This is so the backend and frontend of the website can communicate
-CORS(app)
 
 # Secret key used by Flask for session security (not exposed to front-end)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "change-this-in-production")
