@@ -235,17 +235,105 @@ Sent via josiahguenthermagic.com
 
         app.logger.info(f"Contact email sent from {email}")
 
-        return jsonify({
-            "success": True
+   # ──────────────────────────────────────────────────────
+    # Send confirmation email to the customer
+    # (If this fails, don't lose the booking inquiry.)
+    # ──────────────────────────────────────────────────────
+    try:
+        confirmation_subject = "Thanks for contacting Josiah Guenther Magic!"
+
+        confirmation_text = f"""
+Hi {first_name},
+
+Thank you for contacting Josiah Guenther Magic!
+
+I've received your inquiry and will personally review it as soon as possible.
+
+I do my best to respond within 1–2 business days.
+
+In the meantime, feel free to explore my website:
+https://josiahguenthermagic.com
+
+Have a wonderful day!
+
+Josiah Guenther
+"""
+
+        confirmation_html = f"""
+<!DOCTYPE html>
+<html>
+<body style="font-family: Georgia, serif; background:#f4f4f4; padding:40px;">
+<div style="max-width:600px; margin:auto; background:white; padding:40px; border-radius:6px;">
+
+<h2 style="color:#4a90c8;">
+Thanks for reaching out!
+</h2>
+
+<p>Hi {first_name},</p>
+
+<p>
+Thank you for contacting <strong>Josiah Guenther Magic</strong>.
+I've received your inquiry and will personally review it as soon as possible.
+</p>
+
+<p>
+I do my best to respond within <strong>1–2 business days</strong>.
+</p>
+
+
+<hr>
+
+<p><strong>Your message:</strong></p>
+
+<div style="
+background:#f8f8f8;
+padding:16px;
+border-left:3px solid #4a90c8;
+white-space:pre-wrap;
+">
+{message}
+</div>
+
+<p style="margin-top:30px;">
+Have a magical day!
+</p>
+
+<p>
+<strong>Josiah Guenther</strong><br>
+Your Guide to Wonderland
+</p>
+
+</div>
+</body>
+</html>
+"""
+
+        resend.Emails.send({
+            "from": "Josiah Guenther Magic <josiah@josiahguenthermagic.com>",
+            "to": [email],
+            "subject": confirmation_subject,
+            "text": confirmation_text,
+            "html": confirmation_html
         })
 
-    except Exception as exc:
-        app.logger.exception(exc)
+        app.logger.info(f"Confirmation email sent to {email}")
 
-        return jsonify({
-            "success": False,
-            "error": "Something went wrong sending your message."
-        }), 500
+    except Exception as confirmation_error:
+        app.logger.warning(
+            f"Could not send confirmation email to {email}: {confirmation_error}"
+        )
+
+    return jsonify({
+        "success": True
+    })
+
+except Exception as exc:
+    app.logger.exception(exc)
+
+    return jsonify({
+        "success": False,
+        "error": "Something went wrong sending your message."
+    }), 500
 
 
 # ═══════════════════════════════════════════════════════════
