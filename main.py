@@ -1,3 +1,4 @@
+import resend
 import os
 import smtplib
 import ssl
