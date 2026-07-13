@@ -243,7 +243,6 @@ section { padding: 80px 0; }
   font-size: 1.05rem;
   line-height: 1.85;
   color: var(--gold);
-  max-width: 740px;
 }
 .bio-section p + p { margin-top: 18px; }
 /* About section layout */
