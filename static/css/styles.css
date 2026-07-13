@@ -673,29 +673,108 @@ section { padding: 80px 0; }
    FOOTER (all pages)
 ═══════════════════════════════════════════════════════════ */
 footer {
-  background: #070a0f;
-  border-top: 1px solid rgba(74, 144, 200, 0.1);
-  padding: 40px 40px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 22px;
+    background: #070a0f;
+    border-top: 1px solid rgba(74,144,200,.15);
+
+    padding: 70px 30px 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
 }
-.footer-social { display: flex; gap: 24px; align-items: center; }
-.footer-social a {
-  color: #4a6a88;
-  transition: color 0.25s, transform 0.25s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.footer-name{
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    color: var(--chrome);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
 }
-.footer-social a:hover { color: var(--accent); transform: translateY(-2px); }
-.footer-social svg { width: 22px; height: 22px; fill: currentColor; }
-.footer-copy {
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  color: #304050;
-  text-align: center;
+
+.footer-tagline{
+
+    font-family: var(--font-body);
+
+    color: var(--accent);
+
+    letter-spacing: .28em;
+
+    text-transform: uppercase;
+
+    font-size: .8rem;
+
+    margin-bottom: 34px;
+
+}
+
+.footer-contact{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-bottom:34px;
+
+}
+
+.footer-contact p{
+
+    color:var(--gold);
+
+    font-size:1rem;
+
+}
+
+.footer-social{
+
+    display:flex;
+
+    gap:26px;
+
+    margin-bottom:34px;
+
+}
+
+.footer-social a{
+
+    color:#5d7fa3;
+
+    transition:.25s;
+
+}
+
+.footer-social a:hover{
+
+    color:var(--accent);
+
+    transform:translateY(-2px);
+
+}
+
+.footer-social svg{
+
+    width:28px;
+
+    height:28px;
+
+    fill:currentColor;
+
+}
+
+.footer-copy{
+
+    color:#425468;
+
+    font-size:.75rem;
+
+    letter-spacing:.08em;
+
 }
 
 /* ═══════════════════════════════════════════════════════════
