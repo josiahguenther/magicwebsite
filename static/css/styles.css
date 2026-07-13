@@ -246,7 +246,27 @@ section { padding: 80px 0; }
   max-width: 740px;
 }
 .bio-section p + p { margin-top: 18px; }
+/* About section layout */
+.bio-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
 
+.bio-image {
+    flex: 0 0 320px;
+}
+
+.bio-image img {
+    width: 100%;
+    border-radius: 2px;
+    display: block;
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.bio-content {
+    flex: 1;
+}
 /* ─── Video Section ───────────────────────────────────────── */
 .video-section { background: var(--ink); }
 .video-section h2 {
@@ -696,4 +716,18 @@ footer {
   .review-card { flex: 0 0 280px; }
 
   .contact-hero { padding: 120px 24px 48px; }
+     .bio-layout {
+      flex-direction: column;
+      text-align: center;
+      gap: 35px;
+  }
+
+  .bio-image {
+      width: 250px;
+      flex: none;
+  }
+
+  .bio-section p {
+      max-width: 100%;
+  }
 }
