@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 {% set active_page = "home" %}
 
-{% block title %}Josiah Guenther {% endblock %}
+
+{% block title %}
+Professional Magician in Southern California | Josiah Guenther
+{% endblock %}
+
+{% block meta_description %}
+Professional magician Josiah Guenther creates unforgettable close-up and stage magic for corporate events, schools, churches, and private parties throughout Southern California.
+{% endblock %}
 
 {% block content %}
 
@@ -15,7 +22,7 @@
   <img
     class="hero-img"
     src="{{ url_for('static', filename='images/hero-home.jpg') }}"
-    alt="Josiah Guenther performing close-up magic"
+    alt="Josiah Guenther performing a stage magic show"
   />
   <div class="hero-content">
     <div class="hero-eyebrow"><span>Magician</span></div>
