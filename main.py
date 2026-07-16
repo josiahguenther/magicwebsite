@@ -40,6 +40,9 @@ def contact():
     """Render the Contact page."""
     return render_template("contact.html")
 
+@app.route("/sitemap.xml")
+def sitemap():
+    return send_from_directory("static", "sitemap.xml")
 
 # ═══════════════════════════════════════════════════════════
 #  CONTACT FORM  –  POST /send-email
