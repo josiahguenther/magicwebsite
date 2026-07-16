@@ -44,6 +44,9 @@ def contact():
 def sitemap():
     return send_from_directory("static", "sitemap.xml")
 
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory("static", "robots.txt")
 # ═══════════════════════════════════════════════════════════
 #  CONTACT FORM  –  POST /send-email
 # ═══════════════════════════════════════════════════════════
