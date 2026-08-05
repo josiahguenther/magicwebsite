@@ -2,15 +2,104 @@
 {% set active_page = "about" %}
 
 {% block title %}
-About Josiah Guenther | Professional Magician
+About Josiah Guenther | Professional Magician in Southern California
 {% endblock %}
 
 {% block meta_description %}
-Learn about magician Josiah Guenther, his journey into magic, experience, awards, and what makes his performances unique.
+Learn more about Josiah Guenther, a professional magician based in Southern California and member of the Junior Society of the Magic Castle.
 {% endblock %}
 
 {% block content %}
 
-<!-- Page content goes here -->
+<!-- ══ PAGE HEADER ══════════════════════════════════════════════ -->
+<section class="page-header">
+    <div class="container">
+        <div class="section-label"><span>About</span></div>
+        <h1>Meet Your Guide</h1>
+    </div>
+</section>
+
+<!-- ══ ABOUT CONTENT ════════════════════════════════════════════ -->
+<section class="bio-section">
+    <div class="container about-container">
+        <div class="bio-layout">
+
+            <div class="bio-image">
+                <img
+                    src="{{ url_for('static', filename='images/about-photo.jpg') }}"
+                    alt="Professional portrait of Josiah Guenther">
+            </div>
+
+            <div class="bio-content">
+
+                <h2>Hi! I'm Josiah.</h2>
+
+                <p>
+                    I do the impossible. Sort of.
+                </p>
+
+                <p>
+                    At only 15 years old, I have already had the privilege of
+                    entertaining audiences throughout Southern California with
+                    both close-up and stage magic. My performances combine
+                    elegant sleight of hand, audience interaction, comedy, and
+                    storytelling to create moments that people remember long
+                    after the show is over.
+                </p>
+
+                <p>
+                    I am a proud member of the Junior Society of the Academy of
+                    Magical Arts—the legendary Magic Castle in Hollywood—where I
+                    continue to study under some of the finest magicians in the
+                    world. Performing at the Castle has challenged me to pursue
+                    excellence in every aspect of my craft.
+                </p>
+
+                <p>
+                    Outside of magic, I am also an award-winning public speaker,
+                    placing 3rd in Original Oratory at the National Invitational
+                    Tournament of Champions. Those speaking skills allow me to
+                    connect naturally with audiences, keeping every performance
+                    engaging, polished, and full of personality.
+                </p>
+
+                <p>
+                    Whether I'm performing for a corporate banquet, church,
+                    school assembly, wedding reception, or private celebration,
+                    my goal is always the same: to create genuine moments of
+                    wonder that bring people together.
+                </p>
+
+                <p>
+                    Magic has an incredible ability to make us stop, laugh,
+                    question what we thought was possible, and share an
+                    unforgettable experience with the people around us. That's
+                    why I love performing—and why I would be honored to bring
+                    that experience to your event.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ BOOK CTA ════════════════════════════════════════════════ -->
+<section class="book-cta-section">
+    <div class="container">
+        <div class="cta-box">
+            <p class="cta-tagline">
+                Ready to create something unforgettable?
+            </p>
+
+            <a class="book-btn"
+               href="{{ url_for('contact') }}">
+                Book Josiah
+            </a>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
