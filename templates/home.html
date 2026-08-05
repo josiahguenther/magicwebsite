@@ -74,22 +74,20 @@ Professional magician Josiah Guenther creates unforgettable close-up and stage m
 <section class="video-section">
   <div class="container">
     <h2>Promo Video</h2>
+
     <div class="video-wrapper">
-      <!--
-        YOUTUBE VIDEO:
-        Replace the src below with Josiah's YouTube embed URL.
-        How to get it: go to the YouTube video → Share → Embed
-        and copy only the URL from the src="…" attribute.
-        Example: https://www.youtube.com/embed/XXXXXXXXXXX
-      -->
-      <!-- on a YouTube video you can go to share and click the embed option and in the response it will give a link.
-      Just copy and paste that to switch it-->
-      <iframe
-        src="https://www.youtube.com/embed/EbpVITezJ74?si=SO2ntP9SCUkhqP7d"
-        title="Josiah Guenther – Magic Performance"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+      <video
+        id="promoVideo"
+        muted
+        playsinline
+        preload="metadata"
+        controls
+        poster="{{ url_for('static', filename='images/promo-thumbnail.jpg') }}">
+        <source
+          src="{{ url_for('static', filename='videos/Promo.mp4') }}"
+          type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 </section>
