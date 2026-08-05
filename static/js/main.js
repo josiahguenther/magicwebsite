@@ -67,7 +67,7 @@ function initCarousel() {
 
   function startTimer() {
     stopTimer();
-    timer = setInterval(advance, 8000);
+    timer = setInterval(advance, 6500);
   }
 
   function stopTimer() {
