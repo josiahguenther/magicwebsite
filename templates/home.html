@@ -216,5 +216,34 @@ This is not a show you’d want to miss!"</p>
 {% endblock %}
 
 {% block extra_js %}
-<!-- Carousel is initialised in main.js on DOMContentLoaded -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const video = document.getElementById("promoVideo");
+
+    if (video) {
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+
+            });
+
+        }, {
+            threshold: 0.6
+        });
+
+        observer.observe(video);
+    }
+
+});
+</script>
+
 {% endblock %}
