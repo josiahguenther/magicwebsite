@@ -29,6 +29,10 @@ def home():
     return render_template("home.html")
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/services")
 def services():
     """Render the Services page."""
@@ -40,9 +44,6 @@ def contact():
     """Render the Contact page."""
     return render_template("contact.html")
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
 
 @app.route("/sitemap.xml")
 def sitemap():
