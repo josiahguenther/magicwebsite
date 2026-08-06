@@ -285,6 +285,11 @@ section { padding: 80px 0; }
 .about-link:hover {
     color: var(--text-color);
 }
+
+.about-btn {
+    display: inline-block;
+    margin-top: 2rem;
+}
 /* ─── Video Section ───────────────────────────────────────── */
 .video-section { background: var(--ink); }
 .video-section h2 {
