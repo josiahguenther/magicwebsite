@@ -18,6 +18,11 @@
        <loc>https://josiahguenthermagic.com/contact</loc>
        <lastmod>2026-07-16T00:24:59+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+       <priority>0.6000</priority>
+  </url>
+  <url>
+      <loc>https://josiahguenthermagic.com/about</loc>
+      <lastmod>2026-08-06</lastmod>
+      <priority>0.7000</priority>
   </url>
 </urlset>
