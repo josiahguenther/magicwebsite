@@ -559,8 +559,8 @@ section { padding: 80px 0; }
 ═══════════════════════════════════════════════════════════ */
 .about-title {
     text-align: left;
-    color: var(--accent-color);
-    font-size: 2.5rem;
+    color: #7fa8c9;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2rem;
     line-height: 1.2;
