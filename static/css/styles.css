@@ -573,31 +573,35 @@ section { padding: 80px 0; }
 .faq-intro {
     text-align: center;
     margin-bottom: 40px;
-    color: #555;
+    color: #d6d6d6;
     line-height: 1.7;
 }
 
 .faq-item {
     margin-bottom: 18px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: white;
+    border: 1px solid rgba(201, 167, 74, .35);
+    border-radius: 12px;
+    background: rgba(248, 243, 231, 0.08);
+    backdrop-filter: blur(4px);
     overflow: hidden;
-    transition: box-shadow 0.3s ease;
+    transition: all .25s ease;
 }
 
 .faq-item:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-color: #c9a74a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,.18);
 }
 
 .faq-item summary {
     cursor: pointer;
     list-style: none;
-    font-size: 1.1rem;
+    padding: 20px 25px;
+    font-size: 1.08rem;
     font-weight: 600;
-    padding: 20px;
-    position: relative;
+    color: #f5e6b3;
     user-select: none;
+    position: relative;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -608,18 +612,36 @@ section { padding: 80px 0; }
     content: "+";
     position: absolute;
     right: 25px;
-    font-size: 1.4rem;
-    transition: transform 0.25s ease;
+    color: #c9a74a;
+    font-size: 1.5rem;
+    transition: .25s;
 }
 
 .faq-item[open] summary::after {
-    content: "−";
+    content: "–";
 }
 
 .faq-item p {
-    padding: 0 20px 20px;
-    line-height: 1.7;
-    color: #555;
+    padding: 0 25px 25px;
+    line-height: 1.8;
+    color: #d8d8d8;
+}
+
+.faq-item p {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 25px;
+    transition:
+        max-height .35s ease,
+        opacity .25s ease,
+        padding .35s ease;
+}
+
+.faq-item[open] p {
+    max-height: 300px;
+    opacity: 1;
+    padding: 0 25px 25px;
 }
 
 /* ═══════════════════════════════════════════════════════════
