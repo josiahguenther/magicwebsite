@@ -74,23 +74,26 @@ Professional magician Josiah Guenther creates unforgettable close-up and stage m
 <section class="video-section">
   <div class="container">
     <h2>Promo Video</h2>
-
     <div class="video-wrapper">
-      <video
-        id="promoVideo"
-        muted
-        playsinline
-        preload="metadata"
-        controls
-        poster="{{ url_for('static', filename='images/promo-thumbnail.jpg') }}">
-        <source
-          src="{{ url_for('static', filename='Promo.mp4') }}"
-          type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <!--
+        YOUTUBE VIDEO:
+        Replace the src below with Josiah's YouTube embed URL.
+        How to get it: go to the YouTube video → Share → Embed
+        and copy only the URL from the src="…" attribute.
+        Example: https://www.youtube.com/embed/XXXXXXXXXXX
+      -->
+      <!-- on a YouTube video you can go to share and click the embed option and in the response it will give a link.
+      Just copy and paste that to switch it-->
+      <iframe
+        src="https://www.youtube.com/embed/EbpVITezJ74?si=SO2ntP9SCUkhqP7d"
+        title="Josiah Guenther – Magic Performance"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </section>
+
 
 <div class="divider"></div>
 
@@ -223,33 +226,61 @@ This is not a show you’d want to miss!"</p>
 
 {% block extra_js %}
 
+{% block extra_js %}
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <script>
+let promoPlayer;
+
+function onYouTubeIframeAPIReady() {
+    promoPlayer = new YT.Player('promoVideo', {
+        videoId: 'EbpVITezJ74',
+        playerVars: {
+            autoplay: 0,
+            controls: 1,
+            mute: 1,
+            playsinline: 1,
+            rel: 0
+        },
+        events: {
+            onReady: function(event) {
+                event.target.mute();
+            }
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const video = document.getElementById("promoVideo");
 
-    if (video) {
+    if (!video) return;
 
-        const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
 
-            entries.forEach(entry => {
+        entries.forEach(entry => {
 
-                if (entry.isIntersecting) {
-                    video.play().catch(() => {});
-                } else {
-                    video.pause();
-                }
+            if (!promoPlayer || typeof promoPlayer.playVideo !== "function") {
+                return;
+            }
 
-            });
+            if (entry.isIntersecting) {
+                promoPlayer.playVideo();
+            } else {
+                promoPlayer.pauseVideo();
+            }
 
-        }, {
-            threshold: 0.6
         });
 
-        observer.observe(video);
-    }
+    }, {
+        threshold: 0.6
+    });
 
+    observer.observe(video);
 });
 </script>
+
+{% endblock %}
 
 {% endblock %}
