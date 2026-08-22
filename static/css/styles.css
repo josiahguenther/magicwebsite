@@ -230,7 +230,7 @@ section { padding: 80px 0; }
 }
 
 /* ─── Bio Section ─────────────────────────────────────────── */
-.bio-section { background: var(--navy); }
+.bio-section { background: var(--ink); }
 .bio-section h2 {
   font-family: var(--font-heading);
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
@@ -319,7 +319,7 @@ section { padding: 80px 0; }
 }
 
 /* ─── Mid Two-Column Text ─────────────────────────────────── */
-.mid-text-section { background: var(--navy); }
+.mid-text-section { background: var(--ink); }
 .mid-text-section .mid-cols {
   display: grid;
   grid-template-columns: 1fr 1px 1fr;
