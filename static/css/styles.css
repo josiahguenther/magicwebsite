@@ -291,7 +291,7 @@ section { padding: 80px 0; }
     margin-top: 2rem;
 }
 /* ─── Video Section ───────────────────────────────────────── */
-.video-section { background: var(--ink); }
+.video-section { background: var(--navy); }
 .video-section h2 {
   font-family: var(--font-heading);
   font-size: clamp(1.4rem, 3vw, 2rem);
@@ -347,7 +347,7 @@ section { padding: 80px 0; }
     margin: 2rem auto 0;
 }
 /* ─── Image Pair (shared by Home & Services) ──────────────── */
-.image-section { background: var(--ink); padding: 56px 0; }
+.image-section { background: var(--navy); padding: 56px 0; }
 .image-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -365,7 +365,7 @@ section { padding: 80px 0; }
 .image-pair img:hover { filter: saturate(1) brightness(1); }
 
 /* ─── Reviews / Carousel ──────────────────────────────────── */
-.reviews-section { background: var(--ink); overflow: hidden; }
+.reviews-section { background: var(--navy); overflow: hidden; }
 .reviews-section h2 {
   font-family: var(--font-heading);
   font-size: clamp(1.4rem, 3vw, 2rem);
