@@ -32,44 +32,6 @@ Professional magician Josiah Guenther creates unforgettable close-up and stage m
   </div>
 </section>
 
-<!-- ══ BIO ═══════════════════════════════════════════════ -->
-<section class="bio-section">
-    <div class="container about-container">
-        <div class="bio-layout">
-
-            <div class="bio-image">
-                <img
-                    src="{{ url_for('static', filename='images/Josiah Guenther Pro Photo.jpg') }}"
-                    alt="Professional headshot of Josiah Guenther"
-                >
-            </div>
-
-            <div class="bio-content">
-                <div class="section-label"><span>About</span></div>
-                <h2>Hi! I'm Josiah!</h2>
-
-                <p>Josiah does the impossible. Sort of.</p>
-
-                <p>
-                    Josiah a young professional magician living in Los Angeles County in Southern California. At only 15 years old, Josiah is already a talented performer, known for his confident performance, clean sleight of hand, and quirky humor.
-
-                <p>
-                    Whatever services you may require, Josiah is ready to entertain, captivate, and inspire his next audience and ultimately bring a bit more wonder to this wonderless world.
-                </p>
-
-                <a class="hero-cta about-btn"
-                   href="{{ url_for('about') }}">
-                    Learn More About Josiah
-                </a>
-
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
 <!-- ══ VIDEO ══════════════════════════════════════════════ -->
 <section class="video-section">
   <div class="container">
@@ -87,7 +49,6 @@ Professional magician Josiah Guenther creates unforgettable close-up and stage m
 </section>
 
 <div class="divider"></div>
-
 
 <!-- ══ MID TWO-COLUMN TEXT ════════════════════════════════ -->
 <section class="bio-section">
@@ -123,29 +84,6 @@ Professional magician Josiah Guenther creates unforgettable close-up and stage m
 <!--    </div>-->
 <!--  </div>-->
 <!--</section>-->
-
-<!-- ══ PHOTO PAIR ════════════════════════════════════════ -->
-<section class="image-section">
-  <div class="container">
-    <div class="image-pair">
-      <!--
-        IMAGES: static/images/home-photo-1.jpg  &  home-photo-2.jpg
-        Replace these with your own performance photos.
-        Recommended size: 800×600px or larger, 4:3 ratio.
-      -->
-      <img
-        src="{{ url_for('static', filename='images/home-photo-1.jpg') }}"
-        alt="Josiah performing close-up card magic"
-      />
-      <img
-        src="{{ url_for('static', filename='images/home-photo-2.jpg') }}"
-        alt="Josiah entertaining guests at an event"
-      />
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
 
 <!-- ══ REVIEWS CAROUSEL ═══════════════════════════════════ -->
 <section class="reviews-section">
@@ -203,6 +141,71 @@ This is not a show you’d want to miss!"</p>
     <div class="carousel-dots" id="carouselDots"></div>
   </div>
 </section>
+
+
+<!-- ══ BIO ═══════════════════════════════════════════════ -->
+<section class="bio-section">
+    <div class="container about-container">
+        <div class="bio-layout">
+
+            <div class="bio-image">
+                <img
+                    src="{{ url_for('static', filename='images/Josiah Guenther Pro Photo.jpg') }}"
+                    alt="Professional headshot of Josiah Guenther"
+                >
+            </div>
+
+            <div class="bio-content">
+                <div class="section-label"><span>About</span></div>
+                <h2>Hi! I'm Josiah!</h2>
+
+                <p>Josiah does the impossible. Sort of.</p>
+
+                <p>
+                    Josiah a young professional magician living in Los Angeles County in Southern California. At only 15 years old, Josiah is already a talented performer, known for his confident performance, clean sleight of hand, and quirky humor.
+
+                <p>
+                    Whatever services you may require, Josiah is ready to entertain, captivate, and inspire his next audience and ultimately bring a bit more wonder to this wonderless world.
+                </p>
+
+                <a class="hero-cta about-btn"
+                   href="{{ url_for('about') }}">
+                    Learn More About Josiah
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+
+
+<!-- ══ PHOTO PAIR ════════════════════════════════════════ -->
+<section class="image-section">
+  <div class="container">
+    <div class="image-pair">
+      <!--
+        IMAGES: static/images/home-photo-1.jpg  &  home-photo-2.jpg
+        Replace these with your own performance photos.
+        Recommended size: 800×600px or larger, 4:3 ratio.
+      -->
+      <img
+        src="{{ url_for('static', filename='images/home-photo-1.jpg') }}"
+        alt="Josiah performing close-up card magic"
+      />
+      <img
+        src="{{ url_for('static', filename='images/home-photo-2.jpg') }}"
+        alt="Josiah entertaining guests at an event"
+      />
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 
 <!-- ══ BOOK CTA ═══════════════════════════════════════════ -->
 <section class="book-cta-section">
