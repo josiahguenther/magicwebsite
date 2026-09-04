@@ -949,6 +949,23 @@ footer {
 
 }
 
+.do-not-click-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 14px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.do-not-click-button:hover {
+    transform: scale(1.05);
+}
+
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE  (tablet & mobile)
 ═══════════════════════════════════════════════════════════ */
