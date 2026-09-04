@@ -1,1 +1,45 @@
+{% extends "base.html" %}
 
+{% block content %}
+
+<div class="useless-container">
+
+    <h1>Congratulations!</h1>
+
+    <h2>Your name has been added to...</h2>
+
+    <h1 class="wall-title">
+        The Wall of Useless Accomplishments
+    </h1>
+
+    <p>
+        You have successfully accomplished absolutely nothing.
+    </p>
+
+    <p>
+        But at least you're not alone.
+    </p>
+
+    <div class="name-wall">
+
+        {% if names %}
+
+            {% for person in names %}
+                <div class="name">
+                    {{ person["name"] }}
+                </div>
+            {% endfor %}
+
+        {% else %}
+
+            <p>
+                Somehow, you're the first person foolish enough to click it.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
