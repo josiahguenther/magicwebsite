@@ -61,6 +61,7 @@
 <body>
 
   <!-- ══ NAVIGATION ══════════════════════════════════════ -->
+  {% block header %}
   <nav>
     <a class="nav-logo" href="{{ url_for('home') }}">Josiah <span>Guenther</span></a>
     <div class="nav-links">
@@ -70,6 +71,7 @@
       <a class="nav-btn {% if active_page == 'contact'  %}active{% endif %}" href="{{ url_for('contact')  }}">Contact</a>
     </div>
   </nav>
+  {% endblock %}
 
   <!-- ══ PAGE CONTENT ════════════════════════════════════ -->
   <main>
@@ -77,6 +79,7 @@
   </main>
 
   <!-- ══ FOOTER ══════════════════════════════════════════ -->
+  {% block footer %}
   <footer>
 
   <h2 class="footer-name">Josiah Guenther</h2>
@@ -113,6 +116,7 @@
   </a>
 
 </footer>
+{% endblock %}
 
   <!-- Site-wide JavaScript -->
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
