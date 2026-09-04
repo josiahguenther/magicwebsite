@@ -2,11 +2,17 @@ import resend
 import os
 import smtplib
 import ssl
+import sqlite3
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify, send_from_directory, redirect, url_for
 from dotenv import load_dotenv
+
+def get_db_connection():
+    conn = sqlite3.connect("useless_accomplishments.db")
+    conn.row_factory = sqlite3.Row
+    return conn
 
 # ── Load environment variables from .env ──────────────────
 load_dotenv()
@@ -18,6 +24,22 @@ app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "change-this-in-production")
 
 resend.api_key = os.getenv("RESEND_API_KEY")
+
+def init_db():
+    conn = get_db_connection()
+
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS accomplishments (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL
+        )
+    """)
+
+    conn.commit()
+    conn.close()
+
+
+init_db()
 
 # ═══════════════════════════════════════════════════════════
 #  PAGE ROUTES
@@ -52,6 +74,44 @@ def sitemap():
 @app.route("/robots.txt")
 def robots():
     return send_from_directory("static", "robots.txt")
+
+@app.route("/do-not-click", methods=["GET", "POST"])
+def do_not_click():
+
+    if request.method == "POST":
+        name = request.form.get("name")
+
+        if name and name.strip():
+            conn = get_db_connection()
+
+            conn.execute(
+                "INSERT INTO accomplishments (name) VALUES (?)",
+                (name.strip(),)
+            )
+
+            conn.commit()
+            conn.close()
+
+            return redirect(url_for("wall_of_useless_accomplishments"))
+
+    return render_template("do_not_click.html")
+
+
+@app.route("/wall-of-useless-accomplishments")
+def wall_of_useless_accomplishments():
+
+    conn = get_db_connection()
+
+    names = conn.execute(
+        "SELECT name FROM accomplishments ORDER BY id DESC"
+    ).fetchall()
+
+    conn.close()
+
+    return render_template(
+        "wall_of_useless_accomplishments.html",
+        names=names
+    )
 # ═══════════════════════════════════════════════════════════
 #  CONTACT FORM  –  POST /send-email
 # ═══════════════════════════════════════════════════════════
