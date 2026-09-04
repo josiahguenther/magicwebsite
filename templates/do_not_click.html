@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="useless-container">
+
+    <h1>Oh.</h1>
+
+    <p>
+        You clicked it.
+    </p>
+
+    <p>
+        Well, since you're here, what's your name?
+    </p>
+
+    <form method="POST">
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter your name..."
+            maxlength="50"
+            required
+        >
+
+        <button type="submit">
+            Continue, I guess.
+        </button>
+    </form>
+
+</div>
+
+{% endblock %}
