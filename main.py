@@ -75,6 +75,10 @@ def sitemap():
 def robots():
     return send_from_directory("static", "robots.txt")
 
+@app.route("/blog/commas")
+def about():
+    return render_template("blog/commas.html")
+
 @app.route("/do-not-click", methods=["GET", "POST"])
 def do_not_click():
 
