@@ -1,13 +1,52 @@
-<!-- templates/404.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Josiah Guenther</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/404.css') }}">
 </head>
+
 <body>
-    <h1>404 - Page Not Found</h1>
-    <p>Sorry, the page you are looking for does not exist.</p>
-    <a href="josiahguenthermagic.com">Return to Homepage</a>
+    <main class="error-page">
+
+        <a href="/" class="logo">JOSIAH GUENTHER<span>.</span></a>
+
+        <div class="error-content">
+
+            <div class="card-symbol">
+                <span>?</span>
+            </div>
+
+            <p class="eyebrow">A SLIGHT DISAPPEARING ACT</p>
+
+            <h1>Well, this is<br><em>awkward.</em></h1>
+
+            <p class="description">
+                You've found a page that doesn't exist.
+                Either you've taken a wrong turn, or something
+                rather unusual has happened.
+            </p>
+
+            <p class="description secondary">
+                Either way, there's nothing to see here.
+                Let's get you back on track.
+            </p>
+
+            <a href="/" class="home-button">
+                Back to the homepage <span>→</span>
+            </a>
+
+            <p class="error-code">ERROR 404 &nbsp;·&nbsp; PAGE NOT FOUND</p>
+
+        </div>
+
+        <footer>
+            <span>JOSIAH GUENTHER</span>
+            <span>Your Guide to Wonderland</span>
+        </footer>
+
+    </main>
 </body>
 </html>
