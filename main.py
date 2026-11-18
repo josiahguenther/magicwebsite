@@ -116,6 +116,10 @@ def wall_of_useless_accomplishments():
         "wall_of_useless_accomplishments.html",
         names=names
     )
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("404.html"), 404
 # ═══════════════════════════════════════════════════════════
 #  CONTACT FORM  –  POST /send-email
 # ═══════════════════════════════════════════════════════════
