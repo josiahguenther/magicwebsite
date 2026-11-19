@@ -1,4 +1,6 @@
 
+/* ─── 404 Error Page ───────────────────────────────────── */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,9 +8,10 @@
 }
 
 body {
-    background: #f8f7f4;
-    color: #202a3a;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Raleway', sans-serif;
+    background: #0e1117;
+    color: #c8d0dc;
+    min-height: 100vh;
 }
 
 .error-page {
@@ -16,22 +19,46 @@ body {
     display: flex;
     flex-direction: column;
     padding: 35px 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle atmospheric blue glow */
+.error-page::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(
+        circle,
+        rgba(74, 144, 200, 0.09) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
 }
 
 .logo {
-    color: #202a3a;
-    font-family: Georgia, serif;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+    color: #d4dce8;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     text-decoration: none;
 }
 
 .logo span {
-    color: #b18a54;
+    color: #4a90c8;
 }
 
 .error-content {
+    position: relative;
+    z-index: 1;
     width: 100%;
     max-width: 570px;
     margin: auto;
@@ -39,76 +66,93 @@ body {
     text-align: center;
 }
 
+/* Playing card */
 .card-symbol {
     width: 85px;
     height: 115px;
-    margin: 0 auto 35px;
-    background: #ffffff;
-    border: 1px solid #e6e1d8;
-    border-radius: 7px;
-    box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.08);
+    margin: 0 auto 38px;
+    background: linear-gradient(145deg, #1e2a3a, #141a26);
+    border: 1px solid rgba(74, 144, 200, 0.4);
+    border-radius: 5px;
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(74, 144, 200, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
     transform: rotate(-8deg);
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card-symbol:hover {
     transform: rotate(5deg) translateY(-5px);
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.5),
+        0 0 35px rgba(74, 144, 200, 0.25);
 }
 
 .card-symbol span {
-    font-family: Georgia, serif;
+    font-family: 'Cinzel Decorative', serif;
     font-size: 55px;
-    color: #b18a54;
+    color: #4a90c8;
+    text-shadow: 0 0 20px rgba(74, 144, 200, 0.4);
 }
 
+/* Text */
 .eyebrow {
-    color: #a47b43;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 3px;
+    color: #4a90c8;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
     margin-bottom: 20px;
 }
 
 .error-content h1 {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(48px, 7vw, 76px);
-    font-weight: normal;
-    line-height: 1.08;
-    color: #202a3a;
-    margin-bottom: 25px;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: #d4dce8;
+    letter-spacing: 0.04em;
+    margin-bottom: 28px;
 }
 
 .error-content h1 em {
-    color: #b18a54;
-    font-weight: normal;
+    color: #4a90c8;
+    font-weight: 400;
 }
 
 .description {
     max-width: 440px;
     margin: 0 auto;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555b64;
+    font-size: 0.98rem;
+    line-height: 1.85;
+    color: #8fa8c4;
 }
 
 .secondary {
     margin-top: 12px;
+    color: #6a8aaa;
 }
 
+/* Homepage button */
 .home-button {
     display: inline-block;
-    margin-top: 35px;
-    padding: 16px 28px;
-    background: #202a3a;
-    color: #ffffff;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: bold;
+    margin-top: 38px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #2a5a8a, #4a90c8);
+    color: #e8eef5;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: background 0.25s, transform 0.25s;
+    box-shadow: 0 4px 24px rgba(74, 144, 200, 0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .home-button span {
@@ -116,28 +160,34 @@ body {
 }
 
 .home-button:hover {
-    background: #b18a54;
     transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(74, 144, 200, 0.45);
 }
 
+/* Error code */
 .error-code {
     margin-top: 45px;
-    color: #a3a3a3;
-    font-size: 10px;
-    letter-spacing: 2px;
+    color: #5d7189;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
 }
 
+/* Footer */
 footer {
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #e5e2dc;
+    border-top: 1px solid rgba(74, 144, 200, 0.18);
     padding-top: 22px;
-    color: #999;
-    font-size: 10px;
-    letter-spacing: 1.5px;
+    color: #5d7fa3;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    font-family: 'Raleway', sans-serif;
 }
 
+/* Responsive */
 @media (max-width: 600px) {
     .error-page {
         padding: 25px 7%;
@@ -148,15 +198,16 @@ footer {
     }
 
     .error-content h1 {
-        font-size: 52px;
+        font-size: 2.8rem;
     }
 
     .description {
-        font-size: 15px;
+        font-size: 0.9rem;
     }
 
     footer {
         gap: 15px;
-        font-size: 9px;
+        font-size: 0.55rem;
     }
 }
+
