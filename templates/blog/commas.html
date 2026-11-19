@@ -146,6 +146,78 @@
     font-size: 14px;
     font-weight: bold;
 }
+.comments-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.comments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.comments-header h2 {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    color: #202a3a;
+    margin: 0;
+}
+
+.comments-header span {
+    font-size: 12px;
+    color: #999;
+}
+
+.comment {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.comment-avatar {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #eee9df;
+    color: #a47b43;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+    font-size: 15px;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.comment-top strong {
+    font-size: 13px;
+    color: #34445b;
+}
+
+.comment-top span {
+    font-size: 11px;
+    color: #aaa;
+}
+
+.comment-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}       
 </style>
 </head>
     
@@ -201,5 +273,67 @@
 
     </article>
 </div>
+<section class="comments-section">
+    <div class="comments-header">
+        <h2>Comments</h2>
+        <span>5 comments</span>
+    </div>
+
+    <div class="comment">
+        <div class="comment-avatar">J</div>
+        <div class="comment-content">
+            <div class="comment-top">
+                <strong>James Peterson</strong>
+                <span>2 days ago</span>
+            </div>
+            <p>,</p>
+        </div>
+    </div>
+
+    <div class="comment">
+        <div class="comment-avatar">S</div>
+        <div class="comment-content">
+            <div class="comment-top">
+                <strong>Sarah M.</strong>
+                <span>1 day ago</span>
+            </div>
+            <p>,,</p>
+        </div>
+    </div>
+
+    <div class="comment">
+        <div class="comment-avatar">D</div>
+        <div class="comment-content">
+            <div class="comment-top">
+                <strong>David Thompson</strong>
+                <span>18 hours ago</span>
+            </div>
+            <p>I've been waiting for someone to finally address this. ,</p>
+        </div>
+    </div>
+
+    <div class="comment">
+        <div class="comment-avatar">E</div>
+        <div class="comment-content">
+            <div class="comment-top">
+                <strong>Emily R.</strong>
+                <span>12 hours ago</span>
+            </div>
+            <p>,,,,,</p>
+        </div>
+    </div>
+
+    <div class="comment">
+        <div class="comment-avatar">M</div>
+        <div class="comment-content">
+            <div class="comment-top">
+                <strong>Michael</strong>
+                <span>Just now</span>
+            </div>
+            <p>Finally. A blog that understands what really matters.</p>
+        </div>
+    </div>
+
+</section>
 </body>
 </html>
